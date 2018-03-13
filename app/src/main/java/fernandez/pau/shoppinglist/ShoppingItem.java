@@ -6,7 +6,7 @@ package fernandez.pau.shoppinglist;
 
 public class ShoppingItem {
     private String text;
-    private Boolean checked;
+    private boolean checked;
 
     public ShoppingItem(String text) {
         this.text = text;
@@ -26,11 +26,11 @@ public class ShoppingItem {
         this.text = text;
     }
 
-    public Boolean getChecked() {
+    public boolean isChecked() {
         return checked;
     }
 
-    public void setChecked(Boolean checked) {
+    public void setChecked(boolean checked) {
         this.checked = checked;
     }
 
