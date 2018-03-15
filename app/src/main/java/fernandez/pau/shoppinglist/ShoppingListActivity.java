@@ -16,6 +16,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class ShoppingListActivity extends AppCompatActivity {
@@ -105,6 +108,21 @@ public class ShoppingListActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        //obtenir un instant de temps
+        Date date = new Date(); //agafa l'instant actual del dispositiu
+
+        //utilitzem un objecte calendar per esbrianr els detalls de la data Gregorian calendar adaptador, 1 solo objeto
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR);
+        int min = calendar.get(Calendar.MINUTE);
+
+        Toast.makeText(this,String.format("%02d/%02d/%04d %02:%02d",day,month,year,hour,min),Toast.LENGTH_LONG).show();
+
     }
 
     private void onRemoveItem(final int pos) {
