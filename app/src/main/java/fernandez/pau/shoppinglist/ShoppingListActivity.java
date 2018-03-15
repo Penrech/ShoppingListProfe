@@ -121,7 +121,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         int hour = calendar.get(Calendar.HOUR);
         int min = calendar.get(Calendar.MINUTE);
 
-        Toast.makeText(this,String.format("%02d/%02d/%04d %02:%02d",day,month,year,hour,min),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,String.format("%02d/%02d/%04d %02d:%02d",day,month +1 ,year,hour,min),Toast.LENGTH_LONG).show();
 
     }
 
